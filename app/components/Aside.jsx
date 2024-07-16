@@ -19,7 +19,7 @@ const Aside = ({ children }) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu text-base-content w-80 h-full bg-green-500">
+        <ul className="menu text-base-content w-80 h-full">
           <li>
             <a>Sidebar Item 1</a>
           </li>
