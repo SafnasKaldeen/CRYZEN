@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pagination = ({ pageNum, onPageChange }) => {
+const Pagination = ({ pageNum, onPageChange, next }) => {
   const handleNext = () => {
     onPageChange(pageNum + 1);
   };
@@ -21,7 +21,7 @@ const Pagination = ({ pageNum, onPageChange }) => {
         «
       </button>
       <button className="join-item btn">Page {pageNum}</button>
-      <button className="join-item btn" onClick={handleNext}>
+      <button className="join-item btn" onClick={handleNext} disabled={!next}>
         »
       </button>
     </div>
