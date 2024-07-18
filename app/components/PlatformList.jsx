@@ -44,6 +44,14 @@ const GenreList = () => {
           key={genre.id}
         >
           <figure>
+            {/* <Image
+              src={genre.image_background}
+              alt={genre.name}
+              width={40}
+              height={40}
+              className="rounded-lg"
+              objectFit="crop"
+            /> */}
             <img
               src={genre.image_background}
               alt={genre.name}

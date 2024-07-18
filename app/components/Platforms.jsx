@@ -57,11 +57,11 @@ const RenderIcon = ({ platform }) => {
   }
 };
 
-const Platforms = ({ platforms }) => {
+const Platforms = ({ platforms, size }) => {
   return (
     <div className="flex space-x-2 pb-2 pt-2">
       {platforms.map((platform) => (
-        <div key={platform.id} className="text-white">
+        <div key={platform.id} className={"text-white " + size}>
           {RenderIcon({ platform: platform.platform.name })}
         </div>
       ))}

@@ -1,7 +1,5 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import NavBar from "./components/NavBar";
-import Aside from "./components/Aside";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,10 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="dark">
-      <body className="bg-black text-white">
-        <NavBar />
-        <Aside className="pr-10">{children}</Aside>
-      </body>
+      {children}
     </html>
   );
 }

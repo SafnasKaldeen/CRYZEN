@@ -5,7 +5,7 @@ import Top from "../components/Top";
 
 const Aside = ({ children }) => {
   return (
-    <div className="drawer lg:drawer-open  ml-5">
+    <div className="drawer lg:drawer-open bg-transparent ml-5">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col lg:items-start lg:justify-start">
         <label

@@ -1,17 +1,17 @@
-// GamesList.jsx
+// SuggestedGamesList.jsx
 
 "use client";
 
 import React from "react";
-import useGames from "../Hooks/useGames";
+import useSuggestedGames from "../Hooks/useSuggestedGames";
 import Image from "next/image";
 import Pagination from "./Pagination";
 import SkeletonCard from "./SkeltonCard";
 import GameCard from "./GameCard";
 
-const GamesList = () => {
+const SuggestedGamesList = ({ id }) => {
   const [page, setPage] = React.useState(1);
-  const { games, loading, error } = useGames({ pageNum: page });
+  const { games, loading, error } = useSuggestedGames(id);
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
@@ -23,9 +23,14 @@ const GamesList = () => {
 
   return (
     <React.Fragment>
+      {games && games.results.length > 0 && (
+        <h1 className="text-5xl font-bold ml-4 mb-10">
+          Games of the same series
+        </h1>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 mx-4 mr-8">
         {loading
-          ? Array.from({ length: 30 }).map((_, index) => (
+          ? Array.from({ length: 9 }).map((_, index) => (
               <SkeletonCard key={index} />
             ))
           : games.results &&
@@ -40,7 +45,7 @@ const GamesList = () => {
                 />
               ))}
       </div>
-      {games && (
+      {games && games.results.length > 30 && (
         <div className="items-center mb-10 justify-center flex">
           <Pagination
             pageNum={page}
@@ -53,4 +58,4 @@ const GamesList = () => {
   );
 };
 
-export default GamesList;
+export default SuggestedGamesList;

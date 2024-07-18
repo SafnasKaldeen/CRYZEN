@@ -10,7 +10,7 @@ const Top = () => {
       <h1 className="text-2xl font-bold mb-4 transition-opacity duration-400 hover:opacity-50">
         Top
       </h1>
-      <div className="card card-side mb-2 bg-black cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
+      <div className="card card-side mb-2 bg-transparent cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
         <div className="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center group-hover:bg-slate-200 pt-1 pl-1">
           <svg
             className="w-5 h-5 text-white group-hover:text-black transition-colors duration-300"
@@ -27,7 +27,7 @@ const Top = () => {
           <h2 className="font-semibold">Best of the year</h2>
         </div>
       </div>
-      <div className="card card-side mb-2 bg-black cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
+      <div className="card card-side mb-2 bg-transparent cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
         <div className="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center group-hover:bg-slate-200 pt-1">
           <svg
             className="w-5 h-5 text-white group-hover:text-black transition-colors duration-300"
@@ -44,7 +44,7 @@ const Top = () => {
           <h2 className="font-semibold">Popular in 2024</h2>
         </div>
       </div>
-      <div className="card card-side mb-2 bg-black cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
+      <div className="card card-side mb-2 bg-transparent cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
         <div className="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center group-hover:bg-slate-200 pt-1">
           <svg
             className="w-5 h-5 text-white group-hover:text-black transition-colors duration-300"

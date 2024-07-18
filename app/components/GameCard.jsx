@@ -15,17 +15,14 @@ const returnColor = (rating) => {
 
 const GameCard = ({ game, index }) => (
   <div className="card bg-zinc-900 w-full max-w-xs hover:glass transition-all duration-300 transform hover:scale-105">
-    <figure>
+    <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
       <Image
         src={game.background_image}
         alt={game.name}
-        className="w-full h-500 rounded-t-lg"
-        width={320}
-        height={180}
+        layout="fill"
         objectFit="cover"
-        loading={index < 6 ? "eager" : "lazy"}
       />
-    </figure>
+    </div>
     <div className="card-body p-4">
       <Platforms platforms={game.parent_platforms} />
       <div className="flex w-full justify-between">
@@ -36,7 +33,7 @@ const GameCard = ({ game, index }) => (
           {game.rating}
         </span>
       </div>
-      <div className="">
+      <div>
         <div className="flex w-full justify-between items-center border-opacity-50 py-2">
           <span className="text-sm text-gray-400">Release Date:</span>
           <span className="text-sm font-semibold">{game.released}</span>
