@@ -5,7 +5,7 @@ import ThemeToggler from "./ThemeToggler";
 
 const NavBar = () => {
   return (
-    <div className="flex justify-between items-center pt-2 px-5 text-white">
+    <div className="flex justify-between items-center py-6  px-10 text-white">
       <Image src="/logo.png" width={50} height={50} alt="logo" />
       <ThemeToggler />
     </div>

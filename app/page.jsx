@@ -6,7 +6,10 @@ import Pagination from "./components/Pagination";
 
 const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between w-full py-8">
+    <main className="flex min-h-screen flex-col justify-between w-full">
+      <h1 className="text-7xl text-white text-bold mx-3 mb-8 font-bold">
+        HOME
+      </h1>
       <GamesList pageNum={2} />
     </main>
   );

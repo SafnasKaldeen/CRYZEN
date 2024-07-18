@@ -23,17 +23,30 @@ const GamesList = () => {
 
   return (
     <React.Fragment>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 mx-4 mr-8">
         {loading
           ? Array.from({ length: 30 }).map((_, index) => (
               <SkeletonCard key={index} />
             ))
           : games.results &&
-            games.results.map((game, index) => (
-              <GameCard key={game.id} game={game} index={index} />
-            ))}
+            games.results
+              //   .filter((game) => game.genres.some((g) => g.name === "Action"))
+              .map((game, index) => (
+                <GameCard
+                  key={game.id}
+                  game={game}
+                  index={index}
+                  genre="Action"
+                />
+              ))}
       </div>
-      <Pagination pageNum={page} onPageChange={handlePageChange} next={true} />
+      <div className="items-center mb-10 justify-center flex">
+        <Pagination
+          pageNum={page}
+          onPageChange={handlePageChange}
+          next={true}
+        />
+      </div>
     </React.Fragment>
   );
 };

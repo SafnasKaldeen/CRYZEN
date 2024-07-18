@@ -1,8 +1,11 @@
 import React from "react";
+import GenreList from "../components/GenreList";
+import Releases from "../components/Releases";
+import Top from "../components/Top";
 
 const Aside = ({ children }) => {
   return (
-    <div className="drawer lg:drawer-open h-screen">
+    <div className="drawer lg:drawer-open  ml-5">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col lg:items-start lg:justify-start">
         <label
@@ -13,29 +16,15 @@ const Aside = ({ children }) => {
         </label>
         {children}
       </div>
-      <div className="drawer-side h-full">
+      <div className="drawer-side h-auto">
         <label
           htmlFor="my-drawer-2"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu text-base-content w-80 h-full">
-          <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
-          </li>
-          <li>
-            <a>Sidebar Item 3</a>
-          </li>
-          <li>
-            <a>Sidebar Item 4</a>
-          </li>
-          <li>
-            <a>Sidebar Item 5</a>
-          </li>
-        </ul>
+        <Top />
+        <Releases />
+        <GenreList />
       </div>
     </div>
   );
