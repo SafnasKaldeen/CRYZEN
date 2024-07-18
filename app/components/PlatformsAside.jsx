@@ -19,33 +19,33 @@ import {
 const RenderIcon = ({ platform }) => {
   switch (platform) {
     case "PC":
-      return <MdComputer className="text-1x" />;
+      return <MdComputer className="text-1xl" />;
     case "Web":
-      return <MdWeb className="text-1x" />;
+      return <MdWeb className="text-1xl" />;
     case "Neo Geo":
-      return <FaNeos className="text-1x" />;
+      return <FaNeos className="text-1xl" />;
     case "PlayStation":
-      return <FaPlaystation className="text-1x" />;
+      return <FaPlaystation className="text-1xl" />;
     case "iOS":
-      return <FaApple className="text-1x" />;
+      return <FaApple className="text-1xl" />;
     case "Xbox":
-      return <FaXbox className="text-1x" />;
+      return <FaXbox className="text-1xl" />;
     case "Apple Macintosh":
-      return <FaApple className="text-1x" />;
+      return <FaApple className="text-1xl" />;
     case "Android":
-      return <FaAndroid className="text-1x" />;
+      return <FaAndroid className="text-1xl" />;
     case "Linux":
-      return <FaLinux className="text-1x" />;
+      return <FaLinux className="text-1xl" />;
     case "Nintendo":
-      return <SiNintendogamecube className="text-1x" />;
+      return <SiNintendogamecube className="text-1xl" />;
     case "Atari":
-      return <SiAtari className="text-1x" />;
+      return <SiAtari className="text-1xl" />;
     case "Commodore / Amiga":
-      return <SiCommodore className="text-1x" />;
+      return <SiCommodore className="text-1xl" />;
     case "SEGA":
-      return <SiSega className="text-1x" />;
+      return <SiSega className="text-1xl" />;
     case "3DO":
-      return <SiD3Dotjs className="text-1x" />;
+      return <SiD3Dotjs className="text-1xl" />;
     default:
       return null;
   }
@@ -55,10 +55,7 @@ const Platforms = ({ platforms, size }) => {
   return (
     <div className="flex space-x-2 pb-2 pt-2">
       {platforms.map((platform) => (
-        <div
-          key={platform.id}
-          className={"text-white hover:text-blue-400 " + size}
-        >
+        <div key={platform.id} className={" " + size}>
           {RenderIcon({ platform: platform.platform.name })}
         </div>
       ))}

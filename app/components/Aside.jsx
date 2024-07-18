@@ -2,6 +2,7 @@ import React from "react";
 import GenreList from "../components/GenreList";
 import Releases from "../components/Releases";
 import Top from "../components/Top";
+import PlatformList from "../components/PlatformList";
 
 const Aside = ({ children }) => {
   return (
@@ -24,6 +25,7 @@ const Aside = ({ children }) => {
         ></label>
         <Top />
         <Releases />
+        <PlatformList />
         <GenreList />
       </div>
     </div>

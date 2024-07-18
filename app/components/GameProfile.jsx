@@ -26,7 +26,7 @@ const GameProfile = ({ id }) => {
       <div
         className="absolute inset-0"
         style={{
-          height: "75vh",
+          height: "100vh",
           backgroundImage: `url(${game.background_image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -47,12 +47,21 @@ const GameProfile = ({ id }) => {
         <NavBar />
         <Aside className="pr-10">
           <main className="flex flex-col justify-between w-full min-h-screen">
-            <div className="flex flex-col mb-5 ml-3">
-              <Platforms platforms={game.parent_platforms} size={"text-2xl"} />
-            </div>
             <h1 className="text-7xl text-white mx-3 mb-8 font-bold z-10">
               {game.name}
             </h1>
+            <div className="flex flex-row items-center mb-5">
+              <span className="flex flex-col ml-3 badge badge-zinc-900 p-5">
+                <Platforms
+                  platforms={game.parent_platforms}
+                  size={"text-2xl"}
+                />
+              </span>
+              <span className="font-semibold ml-3">
+                Average Playtime: {game.playtime} hours
+              </span>
+            </div>
+
             <div className="mt-9">
               <div className="flex flex-col items-center mb-5">
                 <ScreenShots id={id} />
