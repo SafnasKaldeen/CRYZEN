@@ -35,6 +35,9 @@ const GenreList = () => {
 
   const constructLinkWithParams = (genreSlug) => {
     const url = new URL(window.location.href);
+    if (url.pathname.includes("games")) {
+      url.pathname = "/";
+    }
     url.searchParams.set("genres", genreSlug);
     console.log(`${url.pathname}${url.search}`);
     return `${url.pathname}${url.search}`;

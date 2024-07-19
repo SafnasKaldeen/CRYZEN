@@ -37,6 +37,10 @@ const PlatformList = () => {
 
   const constructLinkWithParams = (platformId) => {
     const url = new URL(window.location.href);
+    // if the url has /games/[id] format delete it
+    if (url.pathname.includes("/games")) {
+      url.pathname = url.pathname.replace("/games", "");
+    }
     url.searchParams.set("parent_platforms", platformId);
     console.log(`${url.pathname}${url.search}`);
     return `${url.pathname}${url.search}`;

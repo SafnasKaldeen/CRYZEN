@@ -6,7 +6,7 @@ import PlatformList from "../components/PlatformList";
 
 const Aside = ({ children }) => {
   return (
-    <div className="drawer lg:drawer-open bg-transparent ml-5 relative">
+    <div className="drawer lg:drawer-open ml-5 relative">
       {/* Checkbox to toggle drawer */}
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
@@ -41,10 +41,10 @@ const Aside = ({ children }) => {
         {/* Overlay that appears when drawer is open on small screens */}
         <label
           htmlFor="my-drawer-2"
-          className="drawer-overlay lg:hidden bg-black/80"
+          className="drawer-overlay lg:hidden bg-black bg-opacity-80"
           aria-label="close sidebar"
         ></label>
-        <div className="p-4 bg-black/80 text-white">
+        <div className="p-4 text-white bg-black lg:bg-transparent bg-opacity-80 lg:bg-opacity-0">
           {/* Content of the drawer */}
           <Top />
           <Releases />
