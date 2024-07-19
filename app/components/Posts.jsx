@@ -16,7 +16,8 @@ const Posts = ({ id }) => {
 
   return (
     <React.Fragment>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 sm:p-6 md:p-8 lg:p-10">
+      <h2 className="text-2xl font-bold mb-4 ml-3">Reddit Posts</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-3">
         {posts.results.map((post) => (
           <Card
             key={post.id}
@@ -27,7 +28,7 @@ const Posts = ({ id }) => {
           >
             <CardBody className="overflow-visible p-0 relative">
               <div className="relative w-full h-48">
-                <div className="m-3 absolute inset-0 bg-glass transition-opacity duration-300 group-hover:opacity-0"></div>
+                <div className="absolute inset-0 bg-glass transition-opacity duration-300 group-hover:opacity-0"></div>
                 <Image
                   alt={post.title}
                   className="m-3 object-cover absolute inset-0 w-full h-full transition-opacity duration-300 opacity-0 group-hover:opacity-100"

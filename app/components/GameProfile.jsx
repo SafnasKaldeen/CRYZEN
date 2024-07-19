@@ -91,7 +91,7 @@ const GameProfile = ({ id }) => {
 
             <div className="mt-9">
               <div className="flex flex-col items-center mb-5">
-                {/* <ScreenShots id={id} /> */}
+                <ScreenShots id={id} />
               </div>
             </div>
             <div className="flex flex-col mb-5 mx-3">
@@ -113,7 +113,7 @@ const GameProfile = ({ id }) => {
             </div>
             <div className="mt-9">
               <div className="flex flex-col items-center mb-5">
-                {/* <YouTubePlayer id={id} /> */}
+                <YouTubePlayer id={id} />
               </div>
             </div>
             {game.description_raw && (
@@ -125,11 +125,13 @@ const GameProfile = ({ id }) => {
               </div>
             )}
             <div className="relative z-10 mb-6 mr-6">
-              {/* <AchievementsDisplay id={id} /> */}
+              <AchievementsDisplay id={id} />
             </div>
-            <Posts id={id} />
+            <div className="flex flex-col mb-10">
+              <Posts id={id} />
+            </div>
             <div className="flex flex-col mb-5 mx-3">
-              <h2 className="text-3xl text-white font-bold mb-5">Tags</h2>
+              <h2 className="text-3xl text-white font-bold mb-10">Tags</h2>
               <div className="flex flex-row flex-wrap gap-2">
                 {game.tags.map((tag) => (
                   <div key={tag.id} className="flex flex-row items-center">
@@ -139,7 +141,7 @@ const GameProfile = ({ id }) => {
               </div>
             </div>
             <div className="relative z-10 mb-6">
-              {/* <SuggestedGameList id={id} /> */}
+              <SuggestedGameList id={id} />
             </div>
           </main>
         </Aside>
