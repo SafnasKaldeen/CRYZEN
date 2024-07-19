@@ -30,6 +30,10 @@ const useGames = ({ pageNum }) => {
       if (pageNum) {
         url.searchParams.set("page", pageNum);
       }
+      if (params.ordering) {
+        url.searchParams.set("ordering", params.ordering || "");
+      }
+
       console.log("Constructed URL:", url.toString() + `&page=${pageNum}`); // Print the new URL
 
       // Simulate data fetching with dummy data

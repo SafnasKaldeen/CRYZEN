@@ -1,15 +1,17 @@
 "use client";
 
 import React from "react";
-import useGames from "../Hooks/useGames";
+import useGamesSearch from "../Hooks/useGamesSearch";
 import Pagination from "./Pagination";
 import SkeletonCard from "./SkeltonCard";
 import GameCard from "./GameCard";
-import { Spinner } from "@nextui-org/react";
 
-const GamesList = () => {
+const GamesList = ({ name }) => {
   const [page, setPage] = React.useState(1);
-  const { games, loading, error } = useGames({ pageNum: page });
+  const { games, loading, error } = useGamesSearch({
+    pageNum: page,
+    search: name,
+  });
 
   const handlePageChange = (newPage) => {
     console.log("New Page:", newPage);

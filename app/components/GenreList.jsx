@@ -38,6 +38,9 @@ const GenreList = () => {
     if (url.pathname.includes("games")) {
       url.pathname = "/";
     }
+    if (url.pathname.includes("search")) {
+      url.pathname = "/";
+    }
     url.searchParams.set("genres", genreSlug);
     console.log(`${url.pathname}${url.search}`);
     return `${url.pathname}${url.search}`;

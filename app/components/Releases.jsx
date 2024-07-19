@@ -3,6 +3,7 @@
 import React from "react";
 import useGenres from "../Hooks/useGenres";
 import Image from "next/image";
+import Link from "next/link";
 
 const Releases = () => {
   return (
@@ -10,7 +11,7 @@ const Releases = () => {
       <h1 className="text-2xl font-bold mb-4 transition-opacity duration-400 hover:opacity-50">
         Releases
       </h1>
-      <div className="card card-side mb-2 bg-transparent cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
+      {/* <div className="card card-side mb-2 bg-transparent cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
         <div className="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center group-hover:bg-slate-200 pl-1">
           <svg
             className="w-5 h-5 text-white group-hover:text-black transition-colors duration-300"
@@ -62,7 +63,26 @@ const Releases = () => {
         <div className="card-body p-2">
           <h2 className="font-semibold">This Month</h2>
         </div>
-      </div>
+      </div> */}
+      <Link href="/?ordering=-released" passHref>
+        <div className="card card-side mb-2 bg-transparent cursor-pointer transform hover:scale-105 transition-all duration-300 items-center justify-center group">
+          <div className="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center group-hover:bg-slate-200 pt-1">
+            <svg
+              className="w-5 h-5 text-white group-hover:text-black transition-colors duration-300"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M0 4h6v12H0V4zm9-4h6v16H9V0zm9 6h6v10h-6V6z"
+              ></path>
+            </svg>
+          </div>
+          <div className="card-body p-2">
+            <h2 className="font-semibold">Upcoming Releases</h2>
+          </div>
+        </div>
+      </Link>
     </ul>
   );
 };
