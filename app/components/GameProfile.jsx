@@ -140,9 +140,11 @@ const GameProfile = ({ id }) => {
               <SuggestedGameList id={id} />
             </div>
             <div className="flex flex-col mb-5 mx-3">
-              <h2 className="text-3xl text-white font-bold mb-10 hover:opacity-50">
-                Tags
-              </h2>
+              {game.tags.length > 0 && (
+                <h2 className="text-3xl text-white font-bold mb-10 hover:opacity-50">
+                  Tags
+                </h2>
+              )}
               <div className="flex flex-row flex-wrap gap-2">
                 {game.tags.map((tag) => (
                   <div key={tag.id} className="flex flex-row items-center">

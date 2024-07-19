@@ -1,21 +1,18 @@
-// GamesList.jsx
-
 "use client";
 
 import React from "react";
 import useGames from "../Hooks/useGames";
-import Image from "next/image";
 import Pagination from "./Pagination";
 import SkeletonCard from "./SkeltonCard";
 import GameCard from "./GameCard";
-import Heading from "./Heading";
 
 const GamesList = () => {
   const [page, setPage] = React.useState(1);
   const { games, loading, error } = useGames({ pageNum: page });
 
   const handlePageChange = (newPage) => {
-    setPage(newPage);
+    console.log("New Page:", newPage);
+    setPage(newPage); // Update the page number in cookies
   };
 
   if (error) {
@@ -24,17 +21,13 @@ const GamesList = () => {
 
   return (
     <React.Fragment>
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 mx-4 mr-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 mx-4 mr-8 mb-5">
         {loading
           ? Array.from({ length: 30 }).map((_, index) => (
               <SkeletonCard key={index} />
             ))
           : games.results &&
-            games.results
-              //   .filter((game) => game.genres.some((g) => g.name === "Action"))
-              .map((game, index) => (
-                <GameCard key={game.id} game={game} index={index} />
-              ))}
+            games.results.map((game) => <GameCard key={game.id} game={game} />)}
       </div>
       {games && (
         <div className="items-center mb-10 justify-center flex">

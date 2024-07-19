@@ -13,14 +13,14 @@ const returnColor = (rating) => {
 };
 
 const GameCard = ({ game, index }) => (
-  <Link href={`/games/${game.id}`} passHref>
+  <Link href={`/games/${game.id || 3498}`} passHref>
     <div className="card bg-zinc-900 w-full max-w-xs hover:glass transition-all duration-300 transform hover:scale-105 flex flex-col no-underline">
       <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
         <Image
-          src={game.background_image}
-          alt={game.name}
+          src={game.background_image || "/logo.png"}
+          alt={game.name || "unavailable"}
           layout="fill"
-          objectFit="cover"
+          objectFit="crop"
           className="transition-opacity duration-300"
         />
       </div>
@@ -28,7 +28,7 @@ const GameCard = ({ game, index }) => (
         <Platforms platforms={game.parent_platforms} />
         <div className="flex w-full justify-between items-center mb-2">
           <h2 className="card-title text-xl font-bold break-words whitespace-break-spaces overflow-hidden">
-            {game.name}
+            {game.name || "unavailable"}
           </h2>
           <span
             className={"text-sm pt-1 font-bold " + returnColor(game.rating)}
@@ -39,7 +39,9 @@ const GameCard = ({ game, index }) => (
         <div className="flex-1">
           <div className="flex w-full justify-between items-center border-opacity-50 py-2">
             <span className="text-sm text-gray-400">Release Date:</span>
-            <span className="text-sm font-semibold">{game.released}</span>
+            <span className="text-sm font-semibold">
+              {game.released || "unavailable"}
+            </span>
           </div>
           <div className="divider w-full m-0"></div>
           <div className="flex w-full justify-between items-center py-2">
@@ -51,7 +53,9 @@ const GameCard = ({ game, index }) => (
           <div className="divider w-full m-0"></div>
           <div className="flex w-full justify-between items-center py-2">
             <span className="text-sm text-gray-400">Ratings Count: </span>
-            <span className="text-sm font-semibold">{game.ratings_count}</span>
+            <span className="text-sm font-semibold">
+              {game.ratings_count || "unavailable"}
+            </span>
           </div>
         </div>
       </div>

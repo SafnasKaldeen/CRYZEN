@@ -2,6 +2,7 @@ import React from "react";
 import usePosts from "../Hooks/usePosts";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import Image from "next/image";
+import GamesList from "./GameList";
 
 const Posts = ({ id }) => {
   const { posts, loading, error } = usePosts(id);
@@ -16,7 +17,12 @@ const Posts = ({ id }) => {
 
   return (
     <React.Fragment>
-      <h2 className="text-2xl font-bold mb-4 hover:opacity-50">Reddit Posts</h2>
+      {posts.length === 0 && <div>No posts found</div>}
+      {posts.length > 0 && (
+        <h2 className="text-2xl font-bold mb-4 hover:opacity-50">
+          Reddit Posts
+        </h2>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mr-8">
         {posts.results.map((post) => (
           <Card

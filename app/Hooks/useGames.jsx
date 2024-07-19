@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+
 import { dummyGames } from "../DummyData/games.js";
 
-const useGames = () => {
+const useGames = ({ pageNum }) => {
   const [games, setGames] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,6 +11,8 @@ const useGames = () => {
 
   useEffect(() => {
     const fetchGames = async () => {
+      // Get pageNum from cookies if not provided
+
       // Convert searchParams to an object
       const params = Object.fromEntries(searchParams.entries());
       console.log("Query Parameters:", params); // Log query parameters
@@ -18,31 +21,34 @@ const useGames = () => {
       const url = new URL("https://api.rawg.io/api/games");
       url.searchParams.set("key", "8e74978f034041139f9453f11fce78aa");
       url.searchParams.set("page_size", "36");
-      url.searchParams.set("page", params.page || "1");
       if (params.genres) {
         url.searchParams.set("genres", params.genres || "");
       }
       if (params.parent_platforms) {
         url.searchParams.set("parent_platforms", params.parent_platforms || "");
       }
-      console.log("Constructed URL:", url.toString()); // Print the new URL
+      if (pageNum) {
+        url.searchParams.set("page", pageNum);
+      }
+      console.log("Constructed URL:", url.toString() + `&page=${pageNum}`); // Print the new URL
 
       // Simulate data fetching with dummy data
       // setGames(dummyGames);
       // setLoading(false);
 
       // Uncomment this part to use real data fetching
-
       try {
-        const response = await fetch(url.toString(), {
+        const response = await fetch(`${url.toString()}`, {
           next: { revalidate: 3600 },
         });
         if (!response.ok) {
           throw new Error("Failed to fetch games");
         }
         const data = await response.json();
+        // console.log("Games: ", data);
         setGames(data);
       } catch (error) {
+        // setGames(dummyGames);
         setError(error);
       } finally {
         setLoading(false);
@@ -55,7 +61,7 @@ const useGames = () => {
     return () => {
       // Perform cleanup if needed
     };
-  }, [searchParams]); // Depend on searchParams to refetch data when it changes
+  }, [searchParams, pageNum]); // Depend on searchParams and pageNum to refetch data when they change
 
   return { games, loading, error };
 };
