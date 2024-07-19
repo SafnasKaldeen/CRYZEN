@@ -8,6 +8,7 @@ import Image from "next/image";
 import Pagination from "./Pagination";
 import SkeletonCard from "./SkeltonCard";
 import GameCard from "./GameCard";
+import Heading from "./Heading";
 
 const GamesList = () => {
   const [page, setPage] = React.useState(1);
@@ -32,12 +33,7 @@ const GamesList = () => {
             games.results
               //   .filter((game) => game.genres.some((g) => g.name === "Action"))
               .map((game, index) => (
-                <GameCard
-                  key={game.id}
-                  game={game}
-                  index={index}
-                  genre="Action"
-                />
+                <GameCard key={game.id} game={game} index={index} />
               ))}
       </div>
       {games && (

@@ -16,8 +16,8 @@ const Posts = ({ id }) => {
 
   return (
     <React.Fragment>
-      <h2 className="text-2xl font-bold mb-4 ml-3">Reddit Posts</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-3">
+      <h2 className="text-2xl font-bold mb-4 hover:opacity-50">Reddit Posts</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mr-8">
         {posts.results.map((post) => (
           <Card
             key={post.id}

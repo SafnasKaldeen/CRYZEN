@@ -16,7 +16,7 @@ const ScreenShots = ({ id }) => {
   return (
     <React.Fragment>
       {/* <h1 className="text-5xl font-bold ml-4 mb-10">Gameplay Screenshots</h1> */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 mx-4 mr-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 mx-4 mr-14">
         {screenshots.results.map((screenshot) => (
           <div
             key={screenshot.id}

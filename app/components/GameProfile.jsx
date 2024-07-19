@@ -9,16 +9,18 @@ import StoreBatch from "./StoreBatch";
 import YouTubePlayer from "../components/YouTubePlayer";
 import AchievementsDisplay from "../components/AchievementsDisplay";
 import Posts from "../components/Posts";
+import { ScrollShadow } from "@nextui-org/scroll-shadow";
+import Bread from "../components/BreadCrumbs";
 
 const returnColor = (metacritic) => {
   if (metacritic >= 80) {
-    return "green-500";
+    return "text-green-500 border-green-500";
   } else if (metacritic >= 50) {
-    return "yellow-500";
+    return "text-yellow-500 border-yellow-500";
   } else if (metacritic > 30) {
-    return "white";
+    return "text-red-500 border-red-500";
   } else {
-    return "red-500";
+    return "text-gray-500 border-gray-500";
   }
 };
 
@@ -63,6 +65,7 @@ const GameProfile = ({ id }) => {
         <NavBar />
         <Aside className="pr-10">
           <main className="flex flex-col justify-between w-full min-h-screen">
+            <Bread name={game.name} />
             <h1 className="text-7xl text-white mx-3 mb-8 font-bold z-10">
               {game.name}
             </h1>
@@ -76,11 +79,11 @@ const GameProfile = ({ id }) => {
               <div
                 className={`font-bold ml-3 border-2 p-2 rounded ${
                   game.metacritic
-                    ? `border-${returnColor(game.metacritic)}`
+                    ? `${returnColor(game.metacritic)}`
                     : "border-gray-500"
                 }`}
               >
-                <p className={`text-${returnColor(game.metacritic)}`}>
+                <p className={returnColor(game.metacritic)}>
                   {game.metacritic || "No Metacritic Score"}
                 </p>
               </div>
@@ -96,7 +99,7 @@ const GameProfile = ({ id }) => {
             </div>
             <div className="flex flex-col mb-5 mx-3">
               {game.stores.length > 0 && (
-                <h2 className="text-3xl text-white font-bold mb-5">
+                <h2 className="text-3xl text-white font-bold mb-5 hover:opacity-50">
                   Stores Available
                 </h2>
               )}
@@ -118,20 +121,28 @@ const GameProfile = ({ id }) => {
             </div>
             {game.description_raw && (
               <div className="flex flex-col mb-5 ml-3">
-                <h2 className="text-3xl text-white font-bold mb-5">About</h2>
-                <p className="text-white text-lg mb-4 mr-10 leading-relaxed break-words text-justify">
+                <h2 className="text-3xl text-white font-bold mb-5 hover:opacity-50">
+                  About
+                </h2>
+                <ScrollShadow className="text-white text-lg mb-4 mr-10 leading-relaxed break-words text-justify">
                   {game.description_raw}
-                </p>
+                </ScrollShadow>
               </div>
             )}
             <div className="relative z-10 mb-6 mr-6">
               <AchievementsDisplay id={id} />
             </div>
-            <div className="flex flex-col mb-10">
+            <div className="flex flex-col mb-10 ml-3">
               <Posts id={id} />
             </div>
+
+            <div className="relative z-10 mb-6">
+              <SuggestedGameList id={id} />
+            </div>
             <div className="flex flex-col mb-5 mx-3">
-              <h2 className="text-3xl text-white font-bold mb-10">Tags</h2>
+              <h2 className="text-3xl text-white font-bold mb-10 hover:opacity-50">
+                Tags
+              </h2>
               <div className="flex flex-row flex-wrap gap-2">
                 {game.tags.map((tag) => (
                   <div key={tag.id} className="flex flex-row items-center">
@@ -139,9 +150,6 @@ const GameProfile = ({ id }) => {
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="relative z-10 mb-6">
-              <SuggestedGameList id={id} />
             </div>
           </main>
         </Aside>
