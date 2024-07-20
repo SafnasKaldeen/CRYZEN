@@ -15,9 +15,7 @@ const Home = () => {
         <Aside className="pr-10">
           <main className="flex min-h-screen flex-col justify-between w-full">
             <Heading />
-            <Suspense fallback={<div>Loading...</div>}>
-              <GamesList />
-            </Suspense>
+            <GamesList />
           </main>
         </Aside>
       </body>

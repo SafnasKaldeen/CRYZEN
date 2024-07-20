@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -17,7 +18,17 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <link rel="stylesheet" href={inter.href} />
       </head>
-      <body>{children}</body>
+      <body>
+        <Suspense
+          fallback={
+            <div className="loader">
+              <div className="spinner"></div>
+            </div>
+          }
+        >
+          {children}
+        </Suspense>
+      </body>
     </html>
   );
 }
