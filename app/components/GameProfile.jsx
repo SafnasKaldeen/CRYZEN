@@ -35,9 +35,7 @@ const GameProfile = ({ id }) => {
         className="absolute inset-0"
         style={{
           height: "100vh",
-          backgroundImage: `url(${
-            game?.background_image || "/path/to/default-image.jpg"
-          })`,
+          backgroundImage: `url(${game?.background_image || "/logo.png"})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "scroll",
