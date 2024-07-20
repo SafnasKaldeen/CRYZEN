@@ -40,7 +40,11 @@ const OrderBy = () => {
     const orderParam = urlParams.get("ordering");
     const path = window.location.pathname;
 
-    if (path.includes("/games/")) {
+    if (
+      path.includes("/games/") ||
+      path.includes("/search/") ||
+      path.includes("/Top-10")
+    ) {
       setShouldDisplay(false);
     } else {
       if (orderParam) {

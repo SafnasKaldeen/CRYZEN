@@ -3,6 +3,7 @@
 import React from "react";
 import useGenres from "../Hooks/useGenres";
 import Link from "next/link";
+import Image from "next/image";
 
 const GenreList = () => {
   const { Genres, loading, error } = useGenres();
@@ -55,10 +56,12 @@ const GenreList = () => {
         <Link href={constructLinkWithParams(genre.slug)} key={genre.id}>
           <div className="card card-side mb-2 bg-black hover:glass cursor-pointer transform hover:scale-105 transition-all duration-300">
             <figure>
-              <img
+              <Image
                 src={genre.image_background}
                 alt={genre.name}
                 className="rounded-lg object-fit-cover w-8 h-8 ml-1"
+                width={32}
+                height={32}
               />
             </figure>
             <div className="card-body p-2">
