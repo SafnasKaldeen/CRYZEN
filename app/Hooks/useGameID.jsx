@@ -15,7 +15,6 @@ const useGame = (id) => {
 
     const fetchGame = async () => {
       setLoading(true); // Set loading to true when fetching data
-      console.log("Fetching game with ID: ", id);
       try {
         const response = await fetch(
           `https://api.rawg.io/api/games/${id}?key=8e74978f034041139f9453f11fce78aa`,

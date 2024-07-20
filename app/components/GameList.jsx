@@ -11,7 +11,6 @@ const GamesList = () => {
   const { games, loading, error } = useGames({ pageNum: page });
 
   const handlePageChange = (newPage) => {
-    console.log("New Page:", newPage);
     setPage(newPage); // Update the page number in cookies
   };
 

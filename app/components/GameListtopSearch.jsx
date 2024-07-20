@@ -14,7 +14,6 @@ const GameListtopSearch = ({ name }) => {
   });
 
   const handlePageChange = (newPage) => {
-    console.log("New Page:", newPage);
     setPage(newPage); // Update the page number in cookies
   };
 

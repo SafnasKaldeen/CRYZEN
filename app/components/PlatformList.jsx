@@ -45,7 +45,6 @@ const PlatformList = () => {
       url.pathname = "/";
     }
     url.searchParams.set("parent_platforms", platformId);
-    console.log(`${url.pathname}${url.search}`);
     return `${url.pathname}${url.search}`;
   };
 

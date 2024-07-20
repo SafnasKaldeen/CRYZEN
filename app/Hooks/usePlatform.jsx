@@ -9,7 +9,6 @@ const usePlatform = () => {
   useEffect(() => {
     const fetchPlatforms = async () => {
       setPlatform(dummyPlatforms);
-      console.log("Platforms: ", dummyPlatforms);
       setLoading(false);
       // setLoading(true); // Set loading to true when page changes
       // try {

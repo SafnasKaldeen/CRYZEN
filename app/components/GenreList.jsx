@@ -43,7 +43,6 @@ const GenreList = () => {
       url.pathname = "/";
     }
     url.searchParams.set("genres", genreSlug);
-    console.log(`${url.pathname}${url.search}`);
     return `${url.pathname}${url.search}`;
   };
 

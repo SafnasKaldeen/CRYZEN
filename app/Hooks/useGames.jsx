@@ -15,7 +15,6 @@ const useGames = ({ pageNum }) => {
 
       // Convert searchParams to an object
       const params = Object.fromEntries(searchParams.entries());
-      console.log("Query Parameters:", params); // Log query parameters
 
       // Construct the URL with query parameters
       const url = new URL("https://api.rawg.io/api/games");
@@ -49,7 +48,7 @@ const useGames = ({ pageNum }) => {
           throw new Error("Failed to fetch games");
         }
         const data = await response.json();
-        // console.log("Games: ", data);
+        console.log("Games: ", data);
         setGames(data);
       } catch (error) {
         // setGames(dummyGames);

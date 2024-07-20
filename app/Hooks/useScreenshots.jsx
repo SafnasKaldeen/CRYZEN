@@ -16,10 +16,7 @@ const useScreenshots = (id) => {
           `https://api.rawg.io/api/games/${id}/screenshots?key=8e74978f034041139f9453f11fce78aa&page_size=30`,
           { next: { revalidate: 3600 } }
         );
-        console.log(
-          "Fetching suggested games for game with ID: ",
-          `https://api.rawg.io/api/games/${id}/screenshots?key=8e74978f034041139f9453f11fce78aa`
-        );
+
         if (!response.ok) {
           throw new Error("Failed to fetch Screenshots");
         }
