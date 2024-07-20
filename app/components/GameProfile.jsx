@@ -98,7 +98,7 @@ const GameProfile = ({ id }) => {
                   {game.name}
                 </h1>
                 <div className="flex flex-row items-center mb-5">
-                  <span className="flex flex-col ml-3 badge badge-zinc-900 p-5">
+                  <span className="flex flex-col ml-3 badge bg-zinc-900 p-5">
                     <Platforms
                       platforms={game.parent_platforms}
                       size={"text-2xl"}

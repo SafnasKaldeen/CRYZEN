@@ -1,6 +1,6 @@
 export const dummyGames = {
   count: 870236,
-  next: "https://api.rawg.io/api/games?key=8e74978f034041139f9453f11fce78aa&page=2&page_size=40",
+  next: "https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_API_KEY}&page=2&page_size=40",
   previous: null,
   results: [
     {

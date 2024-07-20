@@ -5,7 +5,6 @@ import useGames from "../Hooks/useGames";
 import Pagination from "./Pagination";
 import SkeletonCard from "./SkeltonCard";
 import GameCard from "./GameCard";
-import { Spinner } from "@nextui-org/react";
 
 const GamesList = () => {
   const [page, setPage] = React.useState(1);

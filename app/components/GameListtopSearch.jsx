@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 import SkeletonCard from "./SkeltonCard";
 import GameCard from "./GameCard";
 
-const GamesList = ({ name }) => {
+const GameListtopSearch = ({ name }) => {
   const [page, setPage] = React.useState(1);
   const { games, loading, error } = useGamesSearch({
     pageNum: page,
@@ -46,4 +46,4 @@ const GamesList = ({ name }) => {
   );
 };
 
-export default GamesList;
+export default GameListtopSearch;

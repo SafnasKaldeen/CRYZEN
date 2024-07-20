@@ -1,7 +1,7 @@
 import React from "react";
 import GameCard from "./GameCard";
 import { Top10 } from "../DummyData/Top10";
-import useGamesSearch from "../hooks/useGamesSearch";
+import useGamesSearch from "../Hooks/useGamesSearch";
 
 const GameListtop10 = () => {
   return (

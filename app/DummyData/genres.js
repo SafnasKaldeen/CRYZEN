@@ -1,6 +1,6 @@
 const genres = {
   count: 19,
-  next: "https://api.rawg.io/api/genres?key=8e74978f034041139f9453f11fce78aa&page=2&page_size=18",
+  next: "https://api.rawg.io/api/genres?key=${process.env.NEXT_PUBLIC_API_KEY}&page=2&page_size=18",
   previous: null,
   results: [
     {
