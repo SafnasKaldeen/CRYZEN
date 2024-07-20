@@ -16,9 +16,11 @@ const useGames = ({ pageNum }) => {
       // Convert searchParams to an object
       const params = Object.fromEntries(searchParams.entries());
 
+      console.log("API Key:", process.env.NEXT_PUBLIC_API_KEY); // Print the API key
+
       // Construct the URL with query parameters
       const url = new URL("https://api.rawg.io/api/games");
-      url.searchParams.set("key", "8e74978f034041139f9453f11fce78aa");
+      url.searchParams.set("key", process.env.NEXT_PUBLIC_API_KEY);
       url.searchParams.set("page_size", "36");
       if (params.genres) {
         url.searchParams.set("genres", params.genres || "");

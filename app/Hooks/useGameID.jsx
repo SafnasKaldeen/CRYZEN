@@ -17,7 +17,7 @@ const useGame = (id) => {
       setLoading(true); // Set loading to true when fetching data
       try {
         const response = await fetch(
-          `https://api.rawg.io/api/games/${id}?key=8e74978f034041139f9453f11fce78aa`,
+          `https://api.rawg.io/api/games/${id}?key=${process.env.NEXT_PUBLIC_API_KEY}`,
           { next: { revalidate: 3600 } }
         );
         if (!response.ok) {

@@ -13,7 +13,7 @@ const useSuggestedGames = (id) => {
       setLoading(true); // Set loading to true when page changes
       try {
         const response = await fetch(
-          `https://api.rawg.io/api/games/${id}/game-series?key=8e74978f034041139f9453f11fce78aa&page_size=30`,
+          `https://api.rawg.io/api/games/${id}/game-series?key=${process.env.NEXT_PUBLIC_API_KEY}&page_size=30`,
           { next: { revalidate: 3600 } }
         );
 

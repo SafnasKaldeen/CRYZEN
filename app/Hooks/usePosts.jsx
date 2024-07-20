@@ -12,7 +12,7 @@ const usePosts = (id) => {
       setLoading(true); // Set loading to true when page changes
       try {
         const response = await fetch(
-          `https://api.rawg.io/api/games/${id}/reddit?key=8e74978f034041139f9453f11fce78aa&page_size=24`,
+          `https://api.rawg.io/api/games/${id}/reddit?key=${process.env.NEXT_PUBLIC_API_KEY}&page_size=24`,
           { next: { revalidate: 3600 } }
         );
 

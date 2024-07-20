@@ -14,7 +14,7 @@ const useGenres = () => {
       // setLoading(true); // Set loading to true when page changes
       // try {
       //   const response = await fetch(
-      //     `https://api.rawg.io/api/genres?key=8e74978f034041139f9453f11fce78aa`,
+      //     `https://api.rawg.io/api/genres?${process.env.NEXT_PUBLIC_API_KEY}`,
       //     { next: { revalidate: 3600 } }
       //   );
       //   if (!response.ok) {

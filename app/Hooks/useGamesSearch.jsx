@@ -11,7 +11,7 @@ const useGamesSearch = ({ search, pageNum }) => {
     const fetchGames = async () => {
       try {
         const response = await fetch(
-          `https://api.rawg.io/api/games?key=8e74978f034041139f9453f11fce78aa&page_size=32&page=${pageNum}&search=${search}`,
+          `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_API_KEY}&page_size=32&page=${pageNum}&search=${search}`,
           {
             next: { revalidate: 3600 },
           }
