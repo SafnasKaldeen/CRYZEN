@@ -4,8 +4,6 @@ import { Top10 } from "../DummyData/Top10";
 import useGamesSearch from "../hooks/useGamesSearch";
 
 const GameListtop10 = () => {
-  const { games, loading, error } = useGamesSearch("cyber");
-
   return (
     <React.Fragment>
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 mx-4 mr-8 mb-5">

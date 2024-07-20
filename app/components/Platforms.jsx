@@ -19,33 +19,33 @@ import {
 const RenderIcon = ({ platform }) => {
   switch (platform) {
     case "PC":
-      return <MdComputer className="text-2xl" />;
+      return <MdComputer className="text-1xl" />;
     case "Web":
-      return <MdWeb className="text-2xl" />;
+      return <MdWeb className="text-1xl" />;
     case "Neo Geo":
-      return <FaNeos className="text-2xl" />;
+      return <FaNeos className="text-1xl" />;
     case "PlayStation":
-      return <FaPlaystation className="text-2xl" />;
+      return <FaPlaystation className="text-1xl" />;
     case "iOS":
-      return <FaApple className="text-2xl" />;
+      return <FaApple className="text-1xl" />;
     case "Xbox":
-      return <FaXbox className="text-2xl" />;
+      return <FaXbox className="text-1xl" />;
     case "Apple Macintosh":
-      return <FaApple className="text-2xl" />;
+      return <FaApple className="text-1xl" />;
     case "Android":
-      return <FaAndroid className="text-2xl" />;
+      return <FaAndroid className="text-1xl" />;
     case "Linux":
-      return <FaLinux className="text-2xl" />;
+      return <FaLinux className="text-1xl" />;
     case "Nintendo":
-      return <SiNintendogamecube className="text-2xl" />;
+      return <SiNintendogamecube className="text-1xl" />;
     case "Atari":
-      return <SiAtari className="text-2xl" />;
+      return <SiAtari className="text-1xl" />;
     case "Commodore / Amiga":
-      return <SiCommodore className="text-2xl" />;
+      return <SiCommodore className="text-1xl" />;
     case "SEGA":
-      return <SiSega className="text-2xl" />;
+      return <SiSega className="text-1xl" />;
     case "3DO":
-      return <SiD3Dotjs className="text-2xl" />;
+      return <SiD3Dotjs className="text-1xl" />;
     default:
       return null;
   }
