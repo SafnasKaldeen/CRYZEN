@@ -1,5 +1,4 @@
 // pages/index.js (Home component)
-
 "use client";
 
 import React from "react";
